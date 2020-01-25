@@ -9,13 +9,15 @@ import { CompaniesComponent } from './companies/companies.component';
 import { CompanyComponent } from './company/company.component';
 import { CompanyAddEditComponent } from './company-add-edit/company-add-edit.component';
 import { CompanyService } from './services/company.service';
+import { CompaniesImportComponent } from './companies-import/companies-import.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CompaniesComponent,
     CompanyComponent,
-    CompanyAddEditComponent
+    CompanyAddEditComponent,
+    CompaniesImportComponent
   ],
   imports: [
     BrowserModule,

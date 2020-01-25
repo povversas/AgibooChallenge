@@ -1,1 +1,70 @@
-<p>company-add-edit works!</p>
+<h1>{{actionType}} company</h1>
+<form [formGroup]="form" (ngSubmit)="save()" #formDir="ngForm" novalidate>
+  <div class="form-group row">
+    <label class=" control-label col-md-12">External Id</label>
+    <div class="col-md-12">
+      <input class="form-control" type="text" formControlName="externalId">
+    </div>
+    <span class="text-danger ml-3" *ngIf="externalId.invalid && formDir.submitted">
+      External Id is required.
+    </span>
+  </div>
+  <div class="form-group row">
+    <label class=" control-label col-md-12">Trading Name</label>
+    <div class="col-md-12">
+      <input class="form-control" type="text" formControlName="tradingName">
+    </div>
+    <span class="text-danger ml-3" *ngIf="tradingName.invalid && formDir.submitted">
+      Trading Name is required.
+    </span>
+  </div>
+  <div class="form-group row">
+    <label class=" control-label col-md-12">Legal Name</label>
+    <div class="col-md-12">
+      <input class="form-control" type="text" formControlName="legalName">
+    </div>
+    <span class="text-danger ml-3" *ngIf="legalName.invalid && formDir.submitted">
+      Legal Name is required.
+    </span>
+  </div>
+  <div class="form-group row">
+    <label class=" control-label col-md-12">Is Buyer</label>
+    <div class="col-md-12">
+      <input class="form-control" type="text" formControlName="isBuyer">
+    </div>
+    <span class="text-danger ml-3" *ngIf="isBuyer.invalid && formDir.submitted">
+      Possible values 'Yes' or 'No'
+    </span>
+  </div>
+  <div class="form-group row">
+    <label class=" control-label col-md-12">Is Seller</label>
+    <div class="col-md-12">
+      <input class="form-control" type="text" formControlName="isSeller">
+    </div>
+    <span class="text-danger ml-3" *ngIf="isSeller.invalid && formDir.submitted">
+      Possible values 'Yes' or 'No'
+    </span>
+  </div>
+  <div class="form-group row">
+    <label class="control-label col-md-12" for="Body">Phone</label>
+    <div class="col-md-12">
+      <input class="form-control" type="text" formControlName="phone">
+    </div>
+    <span class="text-danger ml-3" *ngIf="phone.invalid && formDir.submitted">
+      Phone is required.
+    </span>
+  </div>
+  <div class="form-group row">
+    <label class="control-label col-md-12" for="Body">Fax</label>
+    <div class="col-md-12">
+      <input class="form-control" type="text" formControlName="fax">
+    </div>
+    <span class="text-danger ml-3" *ngIf="fax.invalid && formDir.submitted">
+      Fax is required.
+    </span>
+  </div>
+  <div class="form-group">
+    <button type="submit" class="btn btn-success float-right">Save</button>
+    <button class="btn btn-secondary float-left" (click)="cancel()">Cancel</button>
+  </div>
+</form>

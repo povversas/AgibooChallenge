@@ -18,6 +18,11 @@ namespace AgiBackEnd.Models
 		public string LegalName { get; set; }
 
 		[Required]
+		//		IsBuyer IsSeller
+		// 1 -	  Yes	  Yes
+		// 2 -	  Yes	  No
+		// 3 -	  No	  Yes
+		// 4 -	  No	  No
 		public int CompanyType { get; set; }
 
 		[Required]
