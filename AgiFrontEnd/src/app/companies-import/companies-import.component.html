@@ -1,1 +1,25 @@
-<p>companies-import works!</p>
+<div>
+    <input type="file" #csvReader name="Upload File" id="fileUpload" (change)="fileUploaded($event)" accept=".csv,.xlsx,.xsl,.txt" />
+    <div class="alert-danger float-right">{{ informationMessage }}</div>
+    <a [routerLink]="['/']" class="btn btn-primary float-right mb-3">Back to companies list</a>
+    <br>
+    <h1>Companies</h1>
+    <p>
+        <button *ngIf="saveButtonDisplay" class="btn btn-primary float-left mb-3"
+            (click)="mapColumns()"> Column Maps</button>
+        <button *ngIf="saveButtonDisplay" class="btn btn-primary float-right mb-3"
+            (click)="saveCompanies()"> {{ saveButtonText }}</button>
+    </p>
+    <br><br>
+    <ag-grid-angular
+    style="width: 100%; height: 500px;"
+    class="ag-theme-balham"
+    [rowData]="rowData"
+    [columnDefs]="columnDefs"
+    (gridReady)="onGridReady($event)"
+    (modelUpdated)="onGridReady($event)"
+    >
+    </ag-grid-angular>
+    
+</div>
+

@@ -10,6 +10,7 @@ import { CompanyComponent } from './company/company.component';
 import { CompanyAddEditComponent } from './company-add-edit/company-add-edit.component';
 import { CompanyService } from './services/company.service';
 import { CompaniesImportComponent } from './companies-import/companies-import.component';
+import { AgGridModule } from 'ag-grid-angular';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { CompaniesImportComponent } from './companies-import/companies-import.co
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AgGridModule.withComponents([])
   ],
   providers: [
     CompanyService
